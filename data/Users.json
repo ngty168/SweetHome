@@ -1,0 +1,19 @@
+[{
+  "name": "Nguyễn Thị Thúy",
+  "email": "thuypong168@gmail.com",
+  "password": "0ced90b861753f16a80fb9a3435f38970578eddda1484904612bd4f8ca1138206e058b5aedc7dfe8e90601f8803f5baa48890464cdafebab88fe523063013b56",
+  "birthday": "16/08/2001",
+  "phone": "0399840479",
+  "address": "Long Thanh Mỹ, quận 9, TP.HCM",
+  "avatar": "assets/user-images/thuynguyen.png",
+  "salt": "f39add9ef9a5bd640887f9585b49c107"
+},{
+  "name": "Nguyễn Văn A",
+  "email": "duya00269@gmail.com",
+  "password": "27702c9359273b72c48574208db79fb37c5779989517481aa55de51c41902bf32f732698fa1b7337772f84b04ebc7675b3fb1744e2d6826997cd293b2512a66a",
+  "birthday": "",
+  "phone": "",
+  "address": "",
+  "avatar": "",
+  "salt": "ba34526d0068eea776d2ea79a5b39389"
+}]
