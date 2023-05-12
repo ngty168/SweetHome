@@ -1,0 +1,56 @@
+.main{
+    padding-top: 60px;
+}
+.box{
+    margin: 50px 12%;
+    display: flex;
+    flex-direction: row;
+    word-spacing: 2px;
+    align-items: center;
+}
+.box .box-left{
+    flex: 1;
+    padding-right: 20px;
+}
+.box-left iframe{
+    width: 100%;
+    border-radius: 16px;
+
+}
+.box .box-right{
+    flex: 1;
+    padding-left: 20px;
+}
+
+input#inputHiddenContent3,#inputShownContent3 {
+    display: none;
+  }
+  
+  span#spanHiddenContent3 {
+    display: none;
+  }
+  
+  input#inputShownContent3:checked ~ span#spanHiddenContent3 {
+    display: block;
+  }
+  
+  input#inputHiddenContent3:checked ~ span#spanHiddenContent3 {
+    display: none;
+  }
+  
+  input#inputShownContent3:checked ~ #myReadMore p {
+      display: none;
+  }
+  label{
+    background-color: #FF4B57;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  @media (max-width: 768px){
+    .box{
+        flex-direction: column;
+    }
+  }

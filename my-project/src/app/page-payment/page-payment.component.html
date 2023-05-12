@@ -1,0 +1,144 @@
+<!-- <section>
+    <div class="container">
+        <div class="title">THÔNG TIN THANH TOÁN</div>
+        <div class="content">
+            <div class="left">
+                <div class="left-item">
+                    Họ và Tên <br>
+                    <input class="left-item-input h-25" type="text" >   
+                </div>
+                <div class="left-item">
+                    Số điện thoại <br>
+                    <input class="left-item-input h-25"  type="text">
+                <i class="bi bi-person"></i>
+                </div>
+                <div class="left-item">
+                    Địa chỉ <br>
+                    <input class="left-item-input h-25"  type="text" >
+                </div>
+                <div class="left-item">
+                    Lời nhắn cho cửa hàng <br>
+                    <input class="left-item-input h-25"  type="text" >
+                </div>
+                <div style="margin: 10px;">
+                    <input type="checkbox">Địa chỉ liên hệ là địa chỉ giao hàng
+                </div>
+                <div class="item-announce">Thông tin giao hàng</div>
+                <div class="item-infor">
+                    <p>Đối với những sản phẩm có sẵn tại khu vực, SweetHome sẽ giao hàng trong 2-7 ngày. Đối với những sản phẩm không có
+                    sẵn, thời gian giao hàng sẽ được SweetHome thông báo đến quý khách.</p>
+                   
+                <p>Thứ 2 - thứ 6: 8:30 - 17:30</p>
+                <p>Thứ 7 & CN: 9:30 - 16:30</p>
+                </div>
+            </div>
+            <div class="right">
+                <div class="right-content">
+                    <div class="item-announce">Chi tiết đơn hàng</div>
+                    <table width="90%">
+                        <tr>
+                            <td>Kẹo Hershey Kiss Hoa Kỳ ngon bổ rẻ</td>
+                            <td class="price"> 3.400.000VND</td>
+                        </tr>
+                        <tr>
+                            <td>Kẹo Hershey Kiss Hoa Kỳ ngon bổ rẻ nhiều dinh dưỡng </td> 
+                            <td class="price" >3.600.000VND</td>
+                        </tr>
+                        <tr>
+                            <td>Kẹo Hershey Kiss Hoa Kỳ ngon bổ rẻ</td>
+                            <td  class="price">1.800.000VND</td>
+                        </tr>
+                    </table>
+                    <hr width="95%">
+                    <table width="90%">
+                        <tr>
+                            <th>Tổng cộng</th>
+                            <td class="price" >8.800.000VND</td> 
+                        </tr>
+                        <tr>
+                            <td >
+                                <button class="button-continue">Tiếp tục mua sắm</button>
+                            </td>
+                            <td style="text-align:right" >
+                                <button class="button-payment">Thanh toán</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>    
+</section> -->
+<body> 
+  <div class="iphone">
+    <div class="info">
+      <header class="header">
+        <h1>Thông tin thanh toán</h1>
+      </header>
+    
+      <form class="form" method="POST">
+        <div>
+          <h2>Địa chỉ</h2>
+    
+          <div class="card">
+            <input type="text" #name value="{{address}}">
+          </div>
+        </div>
+    
+        <fieldset>
+          <legend>Phương thức thanh toán</legend>
+    
+          <div class="form__radios">
+            <div class="form__radio">
+              <label><span class="icon">
+                  <img src="assets/cod.png" alt="">
+              </span>Thanh toán khi nhận hàng</label>
+              <input checked id="visa" name="payment-method" type="radio" />
+            </div>
+    
+            <div class="form__radio">
+              <label><span class="icon">
+                <img src="assets/card.png" alt="">
+              </span>Tài khoản ngân hàng</label>
+              <input id="paypal" name="payment-method" type="radio" />
+            </div>
+    
+            <div class="form__radio">
+              <label><span class="icon">
+                <img src="assets/e-wallet.png" alt="">
+                </span>Ví điện tử</label>
+              <input id="mastercard" name="payment-method" type="radio" />
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="cart">
+      <div class="summary-total-items"><span class="total-items"></span><h2>Chi tiết đơn hàng</h2></div>
+        <div *ngFor="let item of carts">
+          <div class="summary-subtotal" *ngIf="item.userId === _userId">
+            <div class="subtotal-title">{{item.title}}</div>
+            <div class="subtotal-value final-value" id="basket-subtotal">{{item.price*item.quantity}}</div>
+          </div>
+        </div>
+        <div class="summary-total" style="border-top: 1px solid #ccc;">
+          <div class="total-title">Tổng cộng</div>
+          <div class="total-value final-value" id="basket-total">{{getTotal()}}</div>
+        </div>
+        <div>
+          <button class="button button--full" type="submit"><svg class="icon">
+              <use xlink:href="#icon-shopping-bag" />
+            </svg>Thanh toán</button>
+        </div>
+    </div>
+  </div>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <symbol id="icon-shopping-bag" viewBox="0 0 24 24">
+      <path d="M20 7h-4v-3c0-2.209-1.791-4-4-4s-4 1.791-4 4v3h-4l-2 17h20l-2-17zm-11-3c0-1.654 1.346-3 3-3s3 1.346 3 3v3h-6v-3zm-4.751 18l1.529-13h2.222v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h6v1.5c0 .276.224.5.5.5s.5-.224.5-.5v-1.5h2.222l1.529 13h-15.502z" />
+    </symbol>
+  </svg>
+  </body>
+  <div app-section-content></div>
+  <div app-footer></div>

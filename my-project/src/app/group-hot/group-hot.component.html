@@ -1,0 +1,24 @@
+<section>
+    <br>
+    <h1 style="padding-left: 50px;">Sản phẩm nổi bật</h1>
+    <br>
+    <div class="container">
+        <div class="card" *ngFor="let p of hotProduct">
+            <div class="text-center">
+                <img src="{{p.image}}" alt="Image" class="image">
+                <div class="middle">
+                    <span class="text" routerLink="/products/{{p._id}}"><i class="fas fa-eye"></i></span>
+                    <span class="text" (click)="_addItemToCart(userId, p._id,p.title, 1, p.price, p.image)"><i class="fas fa-cart-plus"></i></span>
+                </div>
+            </div>
+            <div class="box">
+                <h3 class="box-title"><b>{{p.title}}</b></h3>
+                <p class="box-price">{{p.price}}<span> VND</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+<div app-section-brand></div>
+<div app-section-content></div>
+<div app-section-support></div>
+<div app-footer></div>

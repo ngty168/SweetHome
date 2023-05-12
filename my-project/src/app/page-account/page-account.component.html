@@ -1,0 +1,96 @@
+<section>
+    <div class="sidenav">
+        <div class="profile">
+            <img src="{{user.avatar!='' ? user.avatar: 'assets/user-images/avt.png'}}" class="avatar" width="100" height="100">
+            <div class="name">{{user.name}}</div>
+            <div class="email">{{user.email}}</div>
+        </div>
+
+        <div class="sidenav-url">
+            <div class="url">
+                <a href="#profile" class="active">Thông tin cá nhân</a>
+            </div>
+            <div class="url">
+                <a (click)="logout()">Đăng xuất</a>
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+
+    <!-- Main -->
+    <div class="main">
+        <h2 class="profile-title">THÔNG TIN</h2>
+        <div class="card">
+            <div class="card-body">
+                <i class="fa fa-pen fa-xs edit" onclick="window.dialog.showModal();"></i>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Tên</td>
+                            <td>:</td>
+                            <td>{{user.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td>{{user.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Ngày sinh</td>
+                            <td>:</td>
+                            <td>{{user.birthday}}</td>
+                        </tr>
+                        <tr>
+                            <td>Số điện thoại</td>
+                            <td>:</td>
+                            <td>{{user.phone}}</td>
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ</td>
+                            <td>:</td>
+                            <td>{{user.address}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>  
+</section>
+<div app-footer></div>
+
+<dialog id="dialog">
+    <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+    <form action="" #Form="ngForm">
+        <h3 class="center">CẬP NHẬT THÔNG TIN</h3>
+        <table>
+            <tr>
+                <td><label for="">ID</label></td>
+                <td><input type="text" #id value="{{user._id}}" disabled></td>
+            </tr>
+            <tr>
+                <td><label for="">Tên</label></td>
+                <td><input type="text" #name value="{{user.name}}"></td>
+            </tr>
+            <tr>
+                <td><label for="">Email</label></td>
+                <td><input type="text" #email value="{{user.email}}" disabled></td>
+            </tr>
+            <tr>
+                <td><label for="">Ngày sinh</label></td>
+                <td><input type="text" #birth value="{{user.birthday}}"></td>
+            </tr>
+            <tr>
+                <td><label for="">Số điện thoại</label></td>
+                <td><input type="text" #phone value="{{user.phone}}"></td>
+            </tr>
+            <tr>
+                <td><label for="">Địa chỉ</label></td>
+                <td><input type="text" #address value ="{{user.address}}"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="center"><button (click)="putUser(id.value, name.value, birth.value, phone.value, address.value)">CẬP NHẬT</button></td>
+            </tr>
+        </table>  
+    </form>
+
+</dialog>

@@ -1,0 +1,41 @@
+<section>
+    <br>
+    <h1 style="padding-left: 50px;">Kẹo</h1>
+    <br>
+    <div class="select" tabindex="1">
+        <input class="selectopt" name="test" type="radio" id="opt1" (click)="getAllCandy()" checked>
+        <label for="opt1" class="option">Tất cả</label>
+        <input class="selectopt" name="test" type="radio" id="opt2" (click)="getPlayMore()">
+        <label for="opt2" class="option">Play More</label>
+        <input class="selectopt" name="test" type="radio" id="opt3" (click)="getFerrero()">
+        <label for="opt3" class="option">Ferrero Rocher</label>
+        <input class="selectopt" name="test" type="radio" id="opt4" (click)="getXylitol()">
+        <label for="opt4" class="option">Lotte Xylitol</label>
+        <input class="selectopt" name="test" type="radio" id="opt5" (click)="getHershey()">
+        <label for="opt5" class="option">Hershey's</label>
+        <input class="selectopt" name="test" type="radio" id="opt6" (click)="getBernique()">
+        <label for="opt6" class="option">Bernique</label>
+        <input class="selectopt" name="test" type="radio" id="opt7" (click)="getMeiji()">
+        <label for="opt7" class="option">Meiji</label>
+        <input class="selectopt" name="test" type="radio" id="opt8" (click)="getCadbury()">
+        <label for="opt8" class="option">Cadbury</label>
+    </div>
+    <div class="container">
+        <div class="card" *ngFor="let p of candy">
+            <div class="text-center">
+                <img src="{{p.image}}" alt="Image" class="image">
+                <div class="middle">
+                    <span class="text" routerLink="/products/{{p._id}}"><i class="fas fa-eye"></i></span>
+                    <span class="text" (click)="_addItemToCart(userId, p._id,p.title, 1, p.price, p.image)"><i class="fas fa-cart-plus"></i></span>
+                </div>
+            </div>
+            <div class="box">
+                <h3 class="box-title"><b>{{p.title}}</b></h3>
+                <p class="box-price">{{p.price}}<span> VND</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+<div app-section-brand></div>
+<div app-section-support></div>
+<div app-footer></div>

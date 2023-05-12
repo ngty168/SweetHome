@@ -1,0 +1,100 @@
+.contact{
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: static;
+    z-index: -1;
+}
+.contact-parent{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 7%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.contact-child{
+    height: 150px;
+    width: 240px;
+    margin: 10px 0px;
+    border-radius: 16px;
+    background-color: #FFAFB5;
+    color: #fff;
+    text-align: center;
+    box-shadow: 2px 2px 4px 2px silver;
+}
+.contact-child i{
+    font-size: 25px;
+    color: #fff;
+    position: relative;
+    top: 20px;
+}
+.contact-child p:nth-last-child(1){
+    position: relative;
+    top: 40px;
+}
+.social-media-list {
+    display: flex;
+    flex-direction: row;
+    font-size: 22px;
+    margin: auto;
+}
+.social-media-list span a {
+    color: #fff;
+}
+.social-media-list span {
+    position: relative; 
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 10px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #FFAFB5;
+    cursor: pointer; 
+    transition: all .2s ease-in-out;
+    
+}
+.contact-icon i{
+    padding-left: 20px;
+    
+}
+.social-media-list span:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 0 1px #FF4B57;
+    transition: all .2s ease-in-out;
+}
+
+.social-media-list span:hover {
+    background-color: #FF4B57; 
+}
+  
+.social-media-list span:hover:after {
+    opacity: 1;  
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+}
+  
+.social-media-list span:hover a {
+    color: #fff;
+}
+@media screen and (max-width:768px){
+    .contact-child {
+        width: 250px;
+    }
+}
+@media screen and (max-width:500px){
+    .contact-parent{
+        display: none;
+    }
+}
+
+

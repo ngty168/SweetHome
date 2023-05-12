@@ -1,0 +1,44 @@
+#group {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: -1;
+    flex-wrap: wrap;
+    border: 1px solid silver;
+    margin: 50px 0px 50px 0px;
+}
+
+#group div {
+    height: 100px;
+    width: 210px;
+    position: relative;
+}
+table{
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+table tr td{
+    padding: 5px;
+    font-size: 15px;
+    vertical-align: top;
+}
+table tr td i{
+    font-size: 18px;
+    color: #FF4B57;
+}
+@media screen and (max-width:768px){
+    #group div{
+        width: 240px;
+        height: 100px;
+    }
+}
+@media screen and (max-width:500px){
+    #group div{
+        width: 260px;
+        height: 100px;
+    }
+}

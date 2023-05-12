@@ -1,0 +1,43 @@
+section{
+    background-color: black;
+    margin: 30px 0px;
+    padding: 2% 5% 0px 5%;
+}
+.frame{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    width: 40%;
+    margin: 50px auto;
+    position: relative;
+    transform: scale(1);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.card img{
+    width: 100%;
+
+}
+.card:hover{
+    transform: scale(1.1);
+}
+.card .content{
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1; /* Grey text */
+    width: 100%; /* Full width */
+    padding: 3%; /* Some padding */
+}
+@media (max-width: 768px) {
+    .frame{
+        flex-direction: column;
+    }
+    .card{
+        width: 80%;
+    }
+}

@@ -1,0 +1,33 @@
+
+<section >
+    <div class="product">
+        <div class="product-image">
+            <img src="{{product.image}}" alt="Hình ảnh sản phẩm">
+        </div>
+        <div class="product-detail">
+            <h1>{{product.title}}</h1>
+            <p><b>{{product.price}}</b><span style="color: #9CA3AF;">&nbsp; VND</span></p>
+            <hr style="width: 30px;">
+            <p>{{product.description}}</p>
+            <div class="input-button">
+                <input type="number" value="1" min="1" #quantity>
+                <span>
+                    <button (click)="_addItemToCart(userId, product._id,product.title, quantity.value, product.price, product.image)">THÊM VÀO GIỎ</button>
+                </span>
+                
+            </div>
+            <p><i class="fas fa-phone" style="color: #FF4B57;"></i> Liên hệ tư vấn và đặt mua: <span style="color: #FF4B57;"> 180062xx</span></p>
+        </div>
+    </div>
+    <div class="related-products">
+        <div class="inline">
+            <h2>Sản phẩm tương tự</h2>
+            <span style="color: #FF4B57; font-size: 12px; cursor: pointer;" routerLink="/products">Xem tất cả</span>
+        </div>
+        <div app-section-similar-product></div>
+    </div>
+</section>
+<div app-section-content></div>
+<div app-section-brand></div>
+<div app-footer></div>
+

@@ -1,0 +1,53 @@
+<section class="container">
+    <form #regForm="ngForm" action="" class="card-3d-wrap" >
+            <div class="card-front">
+                <h1 class="text-center" style="padding-top: 30px;">ĐĂNG KÝ</h1>
+                <div class="form-group">
+                    <mat-icon class="input-icon">person</mat-icon>
+                    <input type="text" name="logname" class="form-control"  minlength="3" placeholder="Nhập họ và tên" id="logname" #logname="ngModel" [(ngModel)]="user.name" [class.is-invalid]="logname.invalid && logname.touched" required autocomplete="off">
+                    <div *ngIf="logname.invalid&& (logname.dirty || logname.touched)">
+                        <small class="text-danger" *ngIf="logname.errors?.['required']">Vui lòng nhập họ tên</small>
+                        <small class="text-danger" *ngIf="logname.errors?.['minlength']">Tên tối thiểu 3 ký tự.</small>
+                    </div> 
+                </div>	
+                <div class="form-group">
+                    <mat-icon class="input-icon"> email</mat-icon> 
+                    <input type="email" [email]="true" name="logemail" class="form-control" placeholder="Nhập vào email" #logemail="ngModel" [(ngModel)]="user.email" [class.is-invalid]="logemail.invalid && logemail.touched" required autocomplete="off"> 
+                    <div *ngIf="logemail.invalid&& (logemail.dirty || logemail.touched)">
+                        <small class="text-danger" *ngIf="logemail.errors?.['required']">Vui lòng nhập email</small>
+                        <small class="text-danger" *ngIf="logemail.errors?.['email']" >Email không hợp lệ</small>
+                    </div> 
+                </div>
+                <div class="form-group">
+                    <mat-icon class="input-icon">https</mat-icon>
+                    <input type="password" name="logpass" class="form-control" minlength="8" placeholder="Nhập vào mật khẩu" #password="ngModel" [(ngModel)]="user.password" [class.is-invalid]="password.invalid && password.touched" required autocomplete="off">    
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+                        <small class="text-danger" *ngIf="password.errors?.['required']">Vui lòng nhập mật khẩu.</small>
+                        <small class="text-danger" *ngIf="password.errors?.['minlength']">Mật khẩu tối thiểu 8 ký tự.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <mat-icon class="input-icon">https</mat-icon>
+                    <input type="password" name="confirmPassword" class="form-control" placeholder="Nhập lại mật khẩu" #confirmPassword [class.is-invalid]="regForm.errors?.['misMatch']" required autocomplete="off">    
+                    <!-- <div *ngIf="confirmPass.touched && confirmPass.invalid" class="alert alert-danger">
+                        <small class="text-danger" *ngIf="logconfirmpass.errors?.['required']">Vui lòng nhập mật khẩu.</small>
+
+                    </div> -->
+                    <small class="text-danger" *ngIf="regForm.errors?.['misMatch']">Mật khẩu không trùng khớp</small>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="invalidCheck" required checked>
+                    <label class="form-check-label" for="invalidCheck">
+                        Tôi đồng ý với các chính sách bảo mật của Sweethome
+                    </label>
+                  </div>
+                <div class="text-center">
+                    <button class="btn" [disabled]="regForm.form.invalid" (click)="postUser()">Đăng ký</button>
+                </div>
+
+                <p style="text-align: center; font-size: 12px;padding-bottom: 30px"><span style="color: #999999;">Bạn đã có tài khoản?</span>&nbsp;<span routerLink="/login" style="color: #FF4B57;font-weight: bold; cursor: pointer;">Đăng nhập</span></p>
+            </div>
+    </form>
+    <div app-section-content></div>
+</section>
+<section app-footer></section>

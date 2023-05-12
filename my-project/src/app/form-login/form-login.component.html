@@ -1,0 +1,42 @@
+<section class="container">
+    <form #loginForm="ngForm" action="" class="card-3d-wrap" >
+            <div class="card-front">
+                <h1 class="text-center" style="padding-top: 30px;">ĐĂNG NHẬP</h1>
+                <div class="form-group">
+                    <mat-icon class="input-icon"> email</mat-icon> 
+                    <input type="email" [email]="true" name="logemail" class="form-control" placeholder="Nhập vào email" #logemail="ngModel" [(ngModel)]="user.email" [class.is-invalid]="logemail.invalid && logemail.touched" required autocomplete="off"> 
+                    <div *ngIf="logemail.invalid&& (logemail.dirty || logemail.touched)">
+                        <small class="text-danger" *ngIf="logemail.errors?.['required']">Vui lòng nhập email</small>
+                        <small class="text-danger" *ngIf="logemail.errors?.['email']" >Email không hợp lệ</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <mat-icon class="input-icon">https</mat-icon>
+                    <input type="password" name="logpass" class="form-control"required minlength="8" placeholder="Nhập vào mật khẩu" #logpass="ngModel" [(ngModel)]="user.password" [class.is-invalid]="logpass.invalid && logpass.touched" required autocomplete="off">    
+                    <div *ngIf="logpass.invalid && (logpass.dirty || logpass.touched)" class="alert">
+                        <small class="text-danger" *ngIf="logpass.errors?.['required']">Vui lòng nhập mật khẩu.</small>
+                        <small class="text-danger" *ngIf="logpass.errors?.['minlength']">Mật khẩu tối thiểu 8 ký tự.</small>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="btn" [disabled]="loginForm.form.invalid" (click)="xulyDN(logemail.value, logpass.value)">Đăng nhập</button>
+                </div>
+                <p class="position">_______Đăng nhập bằng_______</p>
+                <div class="social-buttons">
+                    <a href="#" class="social-button social-button--facebook" aria-label="Facebook">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-button social-button--mail" aria-label="Google">
+                      <i class="fab fa-google"></i>
+                    </a>
+                  </div>
+                <p style="text-align: center; font-size: 12px; padding-bottom: 30px;"><span style="color: #999999;">Bạn chưa có tài khoản?</span>&nbsp;<span routerLink="/signup" style="color: #FF4B57;font-weight: bold; cursor: pointer;">Đăng ký</span></p>
+            </div>
+
+    </form>
+    <div app-section-content></div>
+</section>
+<section app-footer></section>
+
+
+

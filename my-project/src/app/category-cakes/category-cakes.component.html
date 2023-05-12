@@ -1,0 +1,38 @@
+
+<section>
+    <br>
+    <h1 style="padding-left: 50px;">Bánh</h1>
+    <br>
+    <div class="select" tabindex="1">
+        <input class="selectopt" name="test" type="radio" id="opt1" (click)="getAllCakes()" checked>
+        <label for="opt1" class="option">Tất cả</label>
+        <input class="selectopt" name="test" type="radio" id="opt2" (click)="getNabati()">
+        <label for="opt2" class="option">Nabati</label>
+        <input class="selectopt" name="test" type="radio" id="opt3" (click)="getOreo()">
+        <label for="opt3" class="option">Oreo</label>
+        <input class="selectopt" name="test" type="radio" id="opt4" (click)="getOneOne()">
+        <label for="opt4" class="option">One One</label>
+        <input class="selectopt" name="test" type="radio" id="opt5" (click)="getCosy()">
+        <label for="opt5" class="option">Cosy</label>
+        <input class="selectopt" name="test" type="radio" id="opt6" (click)="getAFC()">
+        <label for="opt6" class="option">AFC</label>
+    </div>
+    <div class="container">
+        <div class="card" *ngFor="let p of cakes">
+            <div class="text-center">
+                <img src="{{p.image}}" alt="Image" class="image">
+                <div class="middle">
+                    <span class="text" routerLink="/products/{{p._id}}"><i class="fas fa-eye"></i></span>
+                    <span class="text" (click)="_addItemToCart(userId, p._id,p.title, 1, p.price, p.image)"><i class="fas fa-cart-plus"></i></span>
+                </div>
+            </div>
+            <div class="box">
+                <h3 class="box-title"><b>{{p.title}}</b></h3>
+                <p class="box-price">{{p.price}}<span> VND</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+<div app-section-brand></div>
+<div app-section-support></div>
+<div class="footer" app-footer></div>

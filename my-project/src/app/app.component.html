@@ -1,0 +1,71 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <section class="header">
+            <div class="header-top">
+                <div class="logo-inline">
+                    <div class="logo-background">
+                        <div><img src="assets/logo.png" alt=""></div>
+                    </div>
+                    <div class="company-name"><h2>SWEETHOME</h2></div>
+                </div>
+                <div class="search-container">
+                    <form class="example">
+                        <input type="text" placeholder="Tìm nhanh sản phẩm" name="search">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="header-cart-account">
+                    <ul>                      
+                        <li><button><i class="fas fa-search"></i></button>
+                          <ul>
+                            <li>
+                                <form class="input">
+                                    <input type="text" placeholder="Tìm nhanh sản phẩm" name="search">
+                                </form>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><button routerLink="cart"><i class="fas fa-shopping-bag"></i><br><span>Giỏ hàng </span></button></li>
+                        <li *ngIf="daDangNhap()==false"><button routerLink="login"><i class="far fa-user"></i><br><span>Đăng nhập </span></button></li>
+                        <li *ngIf="daDangNhap()==true" class="btn" >                           
+                            <button><img src="{{avatar!='' ?avatar:'assets/user-images/avt.png'}}" class="avatar"/></button> 
+                            <div class="dropdown-content">
+                                <a routerLink="users/{{_id}}">Trang cá nhân</a>
+                                <a (click)="logout()">Đăng xuất</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="mobile-menu">
+                <label for="show-menu" class="show-menu">
+                    <span></span>
+                    <div class="lines"></div>
+                </label>
+                <input type="checkbox" id="show-menu">
+                <ul id="menu">
+                  <li><a [routerLink]="''">TRANG CHỦ</a></li>
+                  <li> <a [routerLink]="'products'">TẤT CẢ SẢN PHẨM</a> </li>
+                  <li> <a [routerLink]="'cakes'">BÁNH</a> </li>
+                  <li><a [routerLink]="'candy'">KẸO</a></li>
+                  <li><a [routerLink]="'snack'">SNACK</a></li>
+                  <li><a [routerLink]="'freshWater'">NƯỚC NGỌT</a></li>
+                  <li><a [routerLink]="'about'">GIỚI THIỆU</a></li>
+                </ul>
+              </nav>
+        </section>
+    </body>
+</html>
+<router-outlet></router-outlet>

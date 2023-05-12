@@ -1,0 +1,63 @@
+section{
+    padding: 120px 40px 20px 40px;
+}
+.product{
+    margin: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 20px;
+}
+.product-image{
+    flex: 1;
+
+}
+.product-image img{
+    width: 100%;
+}
+.product-detail{
+    flex: 1;
+    margin-left: 20px;
+}
+.inline{
+    display: inline;
+}
+.inline h2{
+    float: left;
+}
+.inline span{
+    float: right;
+}
+.input-button{
+    display: flex;
+    flex-direction: row;
+
+}
+.input-button input{
+    flex: 1;
+    margin: 5px 2% 5px 0px;
+    width: 50%;
+    padding: 5px;
+}
+.input-button span{
+    flex: 12;
+    margin: 5px 2%;
+}
+.input-button span button{
+    margin: 0px 1%;
+    padding: 7px;
+    width: 200px;
+    font-weight: bold;
+    border-radius: 3px;
+    background-color: #FF4B57;
+    color: #fff;
+    border: 1px solid #FF4B57;
+}
+
+@media (max-width: 768px) {
+    .product{
+        flex-direction: column;
+    }
+}
+
+

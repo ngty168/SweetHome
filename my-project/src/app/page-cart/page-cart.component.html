@@ -1,0 +1,70 @@
+<header>
+  <script>
+
+  </script>
+</header>
+<body>
+  <main>
+    <div class="basket">
+      <!-- <div class="basket-module">
+        <label for="promo-code">Enter a promotional code</label>
+        <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
+        <button class="promo-code-cta">Apply</button>
+      </div> -->
+      
+      <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">Sản phẩm</li>
+          <li class="price">Giá</li>
+          <li class="quantity">Số lượng</li>
+          <li class="subtotal">Tổng</li>
+        </ul>
+      </div>
+      <div *ngFor="let item of carts">
+        <div class="basket-product" *ngIf="item.userId === _userId">
+          <div class="item">
+            <div class="product-image">
+              <img src="{{item.img}}" alt="Placholder Image 2" class="product-frame">
+            </div>
+            <div class="product-details">
+              <h1>{{item.title}}</h1>
+              <p>{{item.productId}}</p>
+            </div>
+          </div>
+          <div class="price">{{item.price}}</div>
+          <div class="quantity">
+            <input type="number"  min="1" #quantity="ngModel" [(ngModel)]="item.quantity" (ngModelChange)="item.quantity*item.price" class="quantity-field">
+          </div>
+          <div class="subtotal">{{item.price*item.quantity}}</div>
+          <div class="remove">
+            <button (click)="_changeQty(_userId, item.productId, item.quantity)"><i class="fas fa-sync-alt"></i></button>
+            <!-- <button (click)="_changeQty()"><i class="fas fa-sync-alt"></i></button> -->
+            <button (click)="_emptyCart(item.productId)"><i class="fas fa-trash-alt"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <input type="text" value="{{getTotal()}}"> -->
+    <aside>
+      <div class="summary">
+        <div class="summary-total-items"><span class="total-items"></span><b>Chi tiết đơn hàng</b></div>
+        <div *ngFor="let item of carts">
+          <div class="summary-subtotal" *ngIf="item.userId === _userId">
+            <div class="subtotal-title">{{item.title}}</div>
+            <div class="subtotal-value final-value" id="basket-subtotal">{{item.price*item.quantity}}</div>
+          </div>
+        </div>
+        <div class="summary-total" style="border-top: 1px solid #ccc;">
+          <div class="total-title">Tổng cộng</div>
+          <div class="total-value final-value" id="basket-total">{{getTotal()}}</div>
+        </div>
+        <div class="summary-checkout">
+          <button class="checkout-cta" routerLink="/pay">Thanh toán</button>
+          <button class="continue" routerLink="/products">Tiếp tục mua sắm</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+</body>
+<div app-section-content></div>
+<div app-footer></div>

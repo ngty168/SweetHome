@@ -1,0 +1,180 @@
+
+section{
+    padding-top: 150px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Sidenav */
+.sidenav {
+    background-color: #fff;
+    color: #333;
+    border-bottom-right-radius: 25px;
+    overflow-x: hidden;
+    padding-top: 20px;
+    flex: 1;
+    top: 150px;
+    margin: auto;
+    /* width: 250px; */
+    /* padding-left: 5%; */
+}
+
+.profile {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 1px grey;
+}
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.job {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.url {
+    text-align: center;
+    width: 300px;
+    margin: auto;
+}
+
+.url a {
+    color: #818181;
+    display: block;
+    margin: 10px 0;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+.url a:hover, .url .active {
+    background-color: #fddfd7;
+    border-radius: 28px;
+    color: #000;
+    margin-left: 14%;
+    width: 65%;
+}
+
+/* End */
+
+/* Main */
+.main {
+    margin-top: 2%;
+    font-size: 28px;
+    padding: 0 10px;
+    flex: 2
+
+}
+
+.main h2 {
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.main .card {
+    background-color: #fddfd7;
+    border-radius: 18px;
+    box-shadow: 1px 1px 8px 0 grey;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 20px 0 20px 50px;
+    width: 80%;
+
+}
+
+.main .card table {
+    border: none;
+    font-size: 16px;
+    height: 270px;
+    width: 80%;
+}
+
+.edit {
+    position: absolute;
+    color: black;
+    right: 14%;
+}
+dialog{
+    margin: auto;
+    width: 450px;
+    border-radius: 8px;
+    border: none;
+    position: relative;
+}
+dialog button{
+    border: none;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+dialog form{
+    width: 100%;
+}
+form h3{
+    margin-bottom: 10px;
+}
+form table{
+    width: 80%;
+    margin: auto;
+}
+tr td{padding: 5px;}
+tr td label{
+    width: 100%;
+    font-size: 15px;
+}
+tr td input{
+    width: 100%;
+    padding: 5px 0px;
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 15px;
+}
+tr td input:focus{
+    outline: none;
+    border-bottom: 1px solid #07f;
+}
+.center{
+    text-align: center;
+}
+form button{  
+    padding: 8px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    background-color: #FF4B57;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+form button:hover{
+    background-color: #E02424;
+}
+@media (max-width:768px){
+    section{
+        flex-direction: column;
+    }
+    .main .card{
+        margin: auto;
+    }
+    .profile-title{
+        margin-left: 5%;
+    }
+}
+
+
+
+
+
+
